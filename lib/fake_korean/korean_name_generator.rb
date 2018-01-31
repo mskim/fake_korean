@@ -1,30 +1,30 @@
 # encoding: utf-8
 
 KOREAN_LAST_NAMES=%w{
-강 
+강
 고
-공 
-구 
+공
+구
 권
-김 
+김
 
-노 
+노
 나
 남
 
 도
 
-마 
-문 
+마
+문
 
 박
 방
 백
 변
 
-서 
-손 
-송 
+서
+손
+송
 신
 
 안
@@ -32,22 +32,22 @@ KOREAN_LAST_NAMES=%w{
 엄
 오
 원
-윤  
-유 
+윤
+유
 이
 
-장 
+장
 전
-정 
-조 
+정
+조
 주
 진
 
 차
 천
-최 
+최
 
-탁 
+탁
 편
 표
 피
@@ -222,7 +222,7 @@ FIRST_NAMES=%w{
 인수
 인순
 인철
-인호 
+인호
 
 장호
 
@@ -318,10 +318,10 @@ FIRST_NAMES=%w{
 혜원
 혜숙
 혜자
- 
+
 희숙
 희자
- 
+
 }
 
 
@@ -426,7 +426,7 @@ FIRST_NAMES=%w{
 혜원
 혜숙
 혜자
- 
+
 희숙
 희자
 }
@@ -434,24 +434,24 @@ FIRST_NAMES=%w{
 
 SINGLE_SYLLABLE=%w{
 가 Ga
-갈 Gal 
-감 Gam 
+갈 Gal
+감 Gam
 갑 Kap
-강 Kang  
-경 Kyung 
+강 Kang
+경 Kyung
 결 Gyul
-구 Koo 
+구 Koo
 권 Kwon
-고 Ko 
+고 Ko
 공 Kong
 궁 Kung
-규 Kyu 
+규 Kyu
 근 Kun
 기 Ki
 김 Kim
 길 Gil
-나 Na 
-남 Nam 
+나 Na
+남 Nam
 노 Noh
 다 Dah
 덕 Duk
@@ -465,7 +465,7 @@ SINGLE_SYLLABLE=%w{
 로 Roh
 라 Ra
 린 Rin
-마 Ma 
+마 Ma
 만 Man
 말 Mal
 명 Myung
@@ -473,7 +473,7 @@ SINGLE_SYLLABLE=%w{
 목 Mok
 몽 Mong
 무 Moo
-문 Moon 
+문 Moon
 미 Mi
 민 Min
 
@@ -502,16 +502,16 @@ SINGLE_SYLLABLE=%w{
 성 Sung
 세 Sae
 소 So
-손 Son 
-송 Song 
+손 Son
+송 Song
 수 Soo
 순 Soon
 숙 Sook
-신 Shin 
+신 Shin
 실 Shil
 
 아 Ah
-안 An 
+안 An
 영 Young
 양 Yang
 언 Un
@@ -523,10 +523,10 @@ SINGLE_SYLLABLE=%w{
 우 Woo
 운 Woon
 원 Won
-윤 Yoon  
-유 Yoo 
+윤 Yoon
+유 Yoo
 은 Eun
-이 Lee 
+이 Lee
 인 In
 일 Il
 
@@ -541,8 +541,8 @@ SINGLE_SYLLABLE=%w{
 주 Joo
 준 Joon
 중 Joong
-조 Cho 
-주 Joo 
+조 Cho
+주 Joo
 지 Gee
 진 Jin
 
@@ -562,7 +562,7 @@ SINGLE_SYLLABLE=%w{
 표 Poyh
 피 Phee
 
-하 Ha 
+하 Ha
 한 Han
 허 Huh
 현 Hyun
@@ -722,6 +722,7 @@ COMPANY_TYPES =%w{
 
 }
 
+
 TITLES=%w{
  회장 Chairman
  사장 President
@@ -736,15 +737,15 @@ TITLES=%w{
  부장 Manager
  부장 Manager
  차장 Manager
- 과장 Manager 
- 과장 Manager 
- 과장 Manager 
- 과장 Manager 
- 
- 대리 Deputy-Manager 
- 대리 Deputy-Manager 
- 대리 Deputy-Manager 
- 대리 Deputy-Manager 
+ 과장 Manager
+ 과장 Manager
+ 과장 Manager
+ 과장 Manager
+
+ 대리 Deputy-Manager
+ 대리 Deputy-Manager
+ 대리 Deputy-Manager
+ 대리 Deputy-Manager
 
  팀장 Team-Leader
  주임 Supervisor
@@ -779,7 +780,7 @@ gmail.com
 hanmail.com
 naver.com
 daum.com
-empas.com  
+empas.com
 }
 
 ADDRESS_STREET=["10-7", "40-3", "56-7","C-3011", "A-102"]
@@ -793,9 +794,9 @@ SINGLE_SYLLABLE_HASH=Hash[*SINGLE_SYLLABLE]
 
 def generate_korean_name(options={})
   last_name=KOREAN_LAST_NAMES[rand(KOREAN_LAST_NAMES.length)]
-  first_name=FIRST_NAMES[rand(FIRST_NAMES.length)]  
+  first_name=FIRST_NAMES[rand(FIRST_NAMES.length)]
   if options[:female]
-    first_name=FIRST_NAMES_FEMALE[rand(FIRST_NAMES_FEMALE.length)]  
+    first_name=FIRST_NAMES_FEMALE[rand(FIRST_NAMES_FEMALE.length)]
   end
   return last_name,first_name
 end
@@ -804,14 +805,14 @@ def generate_korean_company_name
   random_number=rand(COMPANY_NAMES.length)
   random_number-= 1 if random_number.odd?
   korean_company_name=COMPANY_NAMES[random_number]
-  
+
 end
 
 def generate_korean_company_type
   random_number=rand(COMPANY_TYPES.length)
   random_number-= 1 if random_number.odd?
   korean_company_types=COMPANY_TYPES[random_number]
-  
+
 end
 
 
@@ -826,7 +827,7 @@ def to_english(korean)
   korean.each_char do |char|
     if SINGLE_SYLLABLE_HASH[char].nil?
       puts "Missing English table: #{char}"
-    end 
+    end
     english+= SINGLE_SYLLABLE_HASH[char] unless SINGLE_SYLLABLE_HASH[char].nil?
     # english+=" "
   end
@@ -838,7 +839,7 @@ def to_english_initials(korean)
   korean.each_char do |char|
     if SINGLE_SYLLABLE_HASH[char].nil?
       puts "Missing English table: #{char}"
-    end 
+    end
     english+= SINGLE_SYLLABLE_HASH[char][0] unless SINGLE_SYLLABLE_HASH[char].nil?
     # english+=" "
   end
@@ -897,15 +898,15 @@ def generate_address2
   city= generate_a_korean_city
   index=CITIES.index(city)
   en_city=CITIES[index+1]
-  
+
   gu= generate_a_korean_gu
   index=GU.index(gu)
   en_gu=GU[index+1]
-  
+
   dong=generate_a_korean_dong
   index=DONG.index(dong)
   en_dong=DONG[index+1]
-  
+
   korean=city + " "+ gu + " " + dong
   english=en_dong + " " + en_gu + " " + en_city
   return korean, english
@@ -930,7 +931,7 @@ end
 
 class KoreanNameCard
   attr_accessor :name, :company_name,:en_company_name, :division,:en_division, :title, :en_title, :cell, :email, :phone,:fax, :address1,:en_address1, :address2,:en_address2, :zip, :prefix, :en_last_name,:en_first_name
-  
+
   def initialize(options={})
     last,first=generate_korean_name
     @name=last+first
@@ -938,7 +939,7 @@ class KoreanNameCard
     @en_last_name=to_english(last)
     # @en_first_name=FIRST_NAMES[FIRST_NAMES.index(first)+1]
     @en_first_name=to_english(first)
-    
+
     company_name=generate_korean_company_name
     en_company_name=COMPANY_NAMES[COMPANY_NAMES.index(company_name)+1]
     company_type=generate_korean_company_type
@@ -959,10 +960,10 @@ class KoreanNameCard
     @address2,@en_address2=generate_address2
     @zip=ZIP[rand(ZIP.length)]
   end
-  
+
 end
 
-# puts KoreanNameCard.new.inspect
+puts KoreanNameCard.new.inspect
 # puts KoreanCompany.new.inspect
 # 100.times do
 #  puts korean_name=generate_korean_name

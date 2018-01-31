@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = FakeKorean::VERSION
   spec.authors       = ["Min Soo Kim"]
   spec.email         = ["mskimsid@gmail.com"]
-  spec.summary       = %q{similar to faker, but for Korean}
-  spec.description   = %q{generatings fake Korean data, such as name, email, phone, address, company_name, etc...}
+  spec.summary       = %q{Similar to faker, but for Korean}
+  spec.description   = %q{Generates fake Korean data, such as name, email, phone, address, company_name, etc...}
   spec.homepage      = ""
   spec.license       = "MIT"
 
