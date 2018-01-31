@@ -17,12 +17,12 @@ Or install it yourself as:
     $ gem install fake_korean
 
 ## Usage
- p = FakeKorean::Person.new
- p.name   #=> Min Soo Kim
- p.k_name   #=> 김민수
- p.email  #=> mskim@naver.com
- p.address  #=> 120-5 Samic Apt Doksan-Dong Young-DungPo GU, Seoul
- p.k_address  #=> 서울시 영동구 독산동 삼익 Apt 120-5
+ p            = KoreanNameCard.new
+ p.name       #=> 김민수
+ p.en_name    #=> Min Soo Kim
+ p.email      #=> mskim@naver.com
+ p.address    #=> 서울시 영동구 독산동 삼익 Apt 120-5
+ p.en_address #=> 120-5 Samic Apt Doksan-Dong Young-DungPo GU, Seoul
 
 
 ## Contributing

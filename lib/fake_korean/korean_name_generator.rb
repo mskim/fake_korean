@@ -933,31 +933,31 @@ class KoreanNameCard
 
   def initialize(options={})
     last,first=generate_korean_name
-    @name=last+first
+    @name           = last+first
     # @en_last_name=KOREAN_LAST_NAMES[KOREAN_LAST_NAMES.index(last)+1]
-    @en_last_name=to_english(last)
+    @en_last_name   = to_english(last)
     # @en_first_name=FIRST_NAMES[FIRST_NAMES.index(first)+1]
-    @en_first_name=to_english(first)
+    @en_first_name  = to_english(first)
 
-    company_name=generate_korean_company_name
-    en_company_name=COMPANY_NAMES[COMPANY_NAMES.index(company_name)+1]
-    company_type=generate_korean_company_type
-    en_company_type=COMPANY_TYPES[COMPANY_TYPES.index(company_type)+1]
-    @company_name=company_name+company_type
-    @en_company_name=en_company_name + " " + en_company_type
-    @division=company_division
-    @en_division=DIVISIONS[DIVISIONS.index(@division)+1]
-    @title=company_title
-    @en_title=TITLES[TITLES.index(@title)+1]
-    name_sting=@en_first_name+@en_last_name
+    company_name    = generate_korean_company_name
+    en_company_name = COMPANY_NAMES[COMPANY_NAMES.index(company_name)+1]
+    company_type    = generate_korean_company_type
+    en_company_type = COMPANY_TYPES[COMPANY_TYPES.index(company_type)+1]
+    @company_name   = company_name+company_type
+    @en_company_name= en_company_name + " " + en_company_type
+    @division       = company_division
+    @en_division    = DIVISIONS[DIVISIONS.index(@division)+1]
+    @title          = company_title
+    @en_title       = TITLES[TITLES.index(@title)+1]
+    name_sting      = @en_first_name+@en_last_name
     name_sting=to_english_initials(first)
-    @email= name_sting.downcase+@en_last_name.downcase+"@" + generate_mail_server
-    @cell=generate_hand_phone_number
-    @phone=generate_phone_number
-    @fax=generate_phone_number
-    @address1=@en_address1=generate_address1
-    @address2,@en_address2=generate_address2
-    @zip=ZIP[rand(ZIP.length)]
+    @email          = name_sting.downcase+@en_last_name.downcase+"@" + generate_mail_server
+    @cell           = generate_hand_phone_number
+    @phone          = generate_phone_number
+    @fax            = generate_phone_number
+    @address1       = @en_address1=generate_address1
+    @address2,@en_address2 = generate_address2
+    @zip            = ZIP[rand(ZIP.length)]
   end
 
 end
