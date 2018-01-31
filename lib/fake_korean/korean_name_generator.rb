@@ -722,7 +722,6 @@ COMPANY_TYPES =%w{
 
 }
 
-
 TITLES=%w{
  회장 Chairman
  사장 President
@@ -963,7 +962,7 @@ class KoreanNameCard
 
 end
 
-puts KoreanNameCard.new.inspect
+# puts KoreanNameCard.new.inspect
 # puts KoreanCompany.new.inspect
 # 100.times do
 #  puts korean_name=generate_korean_name
